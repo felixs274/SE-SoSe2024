@@ -14,8 +14,8 @@
 
 
 \title{Software Engineering}
-\author{Felix Scholzen}
-\date{15.07.2024}
+\author{Zusammenfassung}
+\date{SoSe 2024}
 
 \begin{document}
 \maketitle
@@ -818,19 +818,47 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 
 \newpage
 
-\subsection{Use Cases}
 
 
-\noindent\textbf{Ziel und Definition:} Ein Use Case beschreibt eine konsistente und zielgerichtete Interaktion eines Benutzers mit dem System aus Anwendersicht. Er legt fest, was das System leisten muss, aber nicht wie.
+\newpage
 
-\noindent\textbf{Hauptaspekte:}
-\begin{itemize}
-    \item \textbf{Erfassung der Systemaufgaben:} 
-    \begin{itemize}
-        \item Erfassung, Beschreibung und Formalisierung der Aufgaben.
-        \item Iterativer Prozess mit Klassenmodellierung und Sequenzdiagrammen.
-    \end{itemize}
-\end{itemize}
+
+\section{Objektorientierte Analyse (OOA)} % --- Objektorientierte Analyse (OOA) ------------------------------------------------------------------------------------
+
+
+\subsection{Kontext-Diagramme}
+
+\textbf{Früh in Analysephase:} Systemkontext erfassen und dokumentieren
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{KontextDiagramm-00.png}
+    \caption{Biespiel eines Kontext Diagramm}
+    \label{fig:KontextDiagramm-00}
+\end{figure}
+
+\newpage
+
+\section{UML und Diagrammtypen}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{UML-00.png}
+    \caption{UML-Diagramme}
+    \label{fig:UML-00}
+\end{figure}
+
+
+\vspace{5em}
+
+
+\subsection{Use-Case-Diagramme}
+
+
+\noindent \textbf{Ziel und Definition:} Spezifiziert Sequenz von Aktionen einschließlich möglicher Varianten, die das System in Interaktion mit Akteuren auslöst. Es ist als Black-Box zu verstehen!
+
+\vspace{1em}
 
 \noindent\textbf{Erfragung des “WAS”?}
 \begin{itemize}
@@ -840,30 +868,16 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \item Aufgaben als Use Cases, Beteiligte als Akteure.
 \end{itemize}
 
+\vspace{1em}
+
 \noindent\textbf{Struktur eines Use Cases:}
 \begin{itemize}
     \item Titel, Kurzbeschreibung, Aktoren, Vorbedingungen, Ablauf, Auswirkungen, Anmerkungen.
 \end{itemize}
 
+\vspace{1em}
+
 \noindent\textbf{Akteure:} Ein Akteur ist ein Objekt der Systemumgebung, das mit dem System interagiert und Use Cases auslösen kann. Akteure können Personen, externe Geräte oder Nachbarsysteme sein.
-
-\noindent\textbf{Anmerkungen zu Use Cases:}
-\begin{itemize}
-    \item Sinnvolle Bezeichnung mit Substantiv und Verb.
-    \item Fachlichen Auslöser und Ergebnis definieren.
-    \item Abstrakt wie möglich, konkret wie nötig formulieren.
-\end{itemize}
-
-\noindent\textbf{Use-Case-Diagramme (Standardelemente):}
-\begin{itemize}
-    \item Aktor, Use Case mit Bezeichner [Name], Systemgrenze mit Bezeichner [System], Kommunikationsbeziehungen, Beziehungen zwischen Anwendungsfällen.
-\end{itemize}
-
-\noindent\textbf{Analyse von Use Case Dokumentationen:}
-\begin{itemize}
-    \item Identische Abläufe als eigene Use Cases ausgliedern (\textbf{<<include>>-Stereotyp}).
-    \item \textbf{<<extend>>-Stereotyp:} Variation des Use Cases, ausgeführt unter bestimmten Bedingungen (z.B. Sonderfall, Fehlerbehandlung).
-\end{itemize}
 
 \newpage
 
@@ -890,6 +904,24 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \end{minipage}
 \end{figure}
 
+\vspace{1em}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering \includegraphics[width=0.4\textwidth]{UseCase-08.png} \\
+        \vspace{1em}
+        \centering Subsystem
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering \includegraphics[width=0.4\textwidth]{UseCase-09.png} \\
+        \vspace{1em}
+        \centering Bedingung
+    \end{minipage}
+\end{figure}
+
+\vspace{1em}
 
 \begin{figure}[ht]
     \centering
@@ -906,32 +938,79 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \end{minipage}
 \end{figure}
 
-\vspace{2em}
+
+
+
+
+\newpage
+
+\subsubsection*{Beispiele}
+\vspace{1em}
+
+\centering Vollständiges Use-Case-Diagramm \\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{UseCase-07.png}
+    \label{fig:UseCase-07}
+\end{figure}
+
+\vspace{1em}
+
+\centering Use-Case-Diagramm mit Subsystem \\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{UseCase-10.png}
+    \label{fig:UseCase-10}
+\end{figure}
+
+\newpage
+
+
+
+\raggedright \subsubsection{<<include>>}
+
+\begin{itemize}
+    \item Visualisiert, dass Use Case A das Verhalten von Use Case B importiert
+\end{itemize}
+
+\begin{figure}[h]
+    \includegraphics[width=0.3\textwidth]{UseCase-11.png}
+    \label{fig:UseCase-11}
+\end{figure}
+
+\raggedright \subsubsection{<<extend>>}
+
+\begin{itemize}
+    \item Verhalten von Use-Case 2 kann durch Use-Case 1 erweitert werden (muss aber nicht)
+    \item Ein Use Case darf mehrere Erweiterungspunkte besitzen
+\end{itemize}
+
+\begin{figure}[h]
+    \includegraphics[width=0.3\textwidth]{UseCase-12.png}
+    \label{fig:UseCase-12}
+\end{figure}
+
+\textbf{Achtung:} Pfeil weist in die Richtung des Use-Cases, der erweitert werden soll
+
+
+\subsection{Use-Case-Definitionen}
 
 \subsubsection*{Beispiele}
 
 \begin{figure}[ht]
     \centering
     \begin{minipage}[t]{0.45\textwidth}
-        \raggedright <<include>>-Stereotyp \\
-        \vspace{1em}
-        \centering \includegraphics[width=0.9\textwidth]{UseCase-05.png}
+        \centering \includegraphics[width=0.9\textwidth]{UseCase-13.png} \\
     \end{minipage}
     \centering
     \begin{minipage}[t]{0.45\textwidth}
-        \raggedright <<extend>>-Stereotyp \\
+        \centering \includegraphics[width=0.9\textwidth]{UseCase-14.png} \\
         \vspace{1em}
-        \centering \includegraphics[width=0.9\textwidth]{UseCase-06.png}
+        \centering mit <<include>>
     \end{minipage}
 \end{figure}
 
-\newpage
 
-
-% --- Objektorientierte Analyse (OOA) ------------------------------------------------------------------------------------
-
-
-\section{Objektorientierte Analyse (OOA)}
 
 
 \section{Objektorientiertes Design (OOD)} % --- Objektorientiertes Design (OOD) ------------------------------------------------------------------------------------
