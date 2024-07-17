@@ -530,7 +530,7 @@ $ \rightarrow $ Jemand der Einfluss auf die Anforderungen hat, da er vom System 
     \item Übersehen eines Stakeholders führt zu lückenhaften Anforderungen
 \end{itemize}
 
-\textbf{Zum Biespiel:} Kunden, Mitarbeiter, Zulieferer, Eigentümer, ...
+\textbf{Zum Beispiel:} Kunden, Mitarbeiter, Zulieferer, Eigentümer, ...
 
 \subsubsection{Stakeholderliste}
 
@@ -833,7 +833,7 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{KontextDiagramm-00.png}
-    \caption{Biespiel eines Kontext Diagramm}
+    \caption{Beispiel eines Kontext Diagramm}
     \label{fig:KontextDiagramm-00}
 \end{figure}
 
@@ -1191,6 +1191,127 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 
 \centering \includegraphics[width=0.8\textwidth]{Paket-03.png}
 
+
+\newpage
+
+\raggedright \subsection{Klassendiagramm}
+
+\vspace{1em}
+
+\raggedright \subsubsection{Definition der Klassen}
+
+\vspace{1em}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[h]{0.45\textwidth}
+        \centering \includegraphics[width=0.6\textwidth]{Klassen-00.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[h]{0.45\textwidth}
+        \raggedright \small
+        \begin{itemize}
+            \item + : \textit{public} \\ Öffentlich; für alle Elemente sichtbar
+            \item $\sim$ : \textit{package} \\ Sichtbar für alle Elemente im gleichen Paket
+            \item \# : \textit{protected} \\ Sichtbar für Instanzen und Instanzen abgeleiteter Klassen
+            \item --- : \textit{private} \\ Sichtbar nur für Instanzen dieser Klasse
+        \end{itemize}
+    \end{minipage}
+\end{figure}
+
+
+\raggedright \subsubsection{Vererbung}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.3\textwidth}
+    \raggedleft \includegraphics[width=0.3\textwidth]{Klassen-Elemente/1.png} 
+\end{minipage}
+\begin{minipage}[h]{0.65\textwidth}
+    \begin{itemize}
+        \item Tiger ist ein Raubtier
+        \item Auto ist ein Fortbewegungsmittel
+        \item Auto ist ein Luxusgut
+    \end{itemize}
+\end{minipage}
+
+\vspace{1em}
+
+\raggedright \subsubsection{Assoziation}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.3\textwidth}
+    \raggedleft \includegraphics[width=0.3\textwidth]{Klassen-Elemente/2.png} 
+\end{minipage}
+\begin{minipage}[h]{0.65\textwidth}
+    \begin{itemize}
+        \item Person - Termin: Eine Person hat Termine; Termine gehören zu einer Person
+        \item Lehrer - Schüler: Ein Schüler hat Lehrer; Lehrer haben Schüler
+        \item Auto - Fahrer: Ein Auto hat einen Fahrer; ein Fahrer hat ein Auto
+    \end{itemize}
+\end{minipage}
+
+\vspace{1em}
+
+\raggedright \subsubsection{Aggregation}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.3\textwidth}
+    \raggedleft \includegraphics[width=0.3\textwidth]{Klassen-Elemente/3.png} 
+\end{minipage}
+\begin{minipage}[h]{0.65\textwidth}
+    \begin{itemize}
+        \item PKW hat Räder
+        \item Eltern haben Kinder
+        \item Buchladen hat Bücher
+    \end{itemize}
+\end{minipage}
+
+\vspace{1em}
+
+\raggedright \subsubsection{Komposition}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.3\textwidth}
+    \raggedleft \includegraphics[width=0.3\textwidth]{Klassen-Elemente/4.png} 
+\end{minipage}
+\begin{minipage}[h]{0.65\textwidth}
+    \begin{itemize}
+        \item Buch hat Buchseiten (Buchseiten gibt es nicht ohne Buch)
+        \item Rechnung hat Posten (Rechnungsposten gibt es nicht ohne Rechnung)
+        \item Graph hat Knoten (Knoten gibt es nicht ohne Graph)
+    \end{itemize}
+\end{minipage}
+
+\vspace{3em}
+
+\raggedright \subsubsection*{Beispiel}
+
+\vspace{1em}
+
+\centering \includegraphics[width=1\textwidth]{Klassen-02.png}
+
+\newpage
+
+
+
+\raggedright \subsection{Objektdiagramme}
+
+\textbf{Ziel:} Momentaufnahme des Systemzustandes darstellen
+
+\vspace{2em}
+
+\begin{minipage}[h]{0.45\textwidth}
+    \tiny \centering Korrespondierende Elemente \\
+    \vspace{1em}
+    \centering \includegraphics[width=0.95\textwidth]{Objekt-00.png}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=0.95\textwidth]{Objekt-01.png}
+\end{minipage}
 
 
 \section{Objektorientiertes Design (OOD)} % --- Objektorientiertes Design (OOD) ------------------------------------------------------------------------------------
