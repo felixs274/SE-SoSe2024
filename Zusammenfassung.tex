@@ -1068,6 +1068,128 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \centering
 \includegraphics[width=0.75\textwidth]{Aktivitaet-Tabellen/5.png}
 
+\newpage
+
+\raggedright \subsection{Zustandsdiagramme}
+
+\textbf{Zustandsdiagramme beantworten die Frage:} “Wie verhält sich System in bestimmtem Zustand bei gewissen Ereignissen?”
+
+\vspace{1em}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[h]{0.45\textwidth}
+        \raggedright
+        \includegraphics[width=0.7\textwidth]{Zustand-00.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[h]{0.45\textwidth}
+        \scriptsize
+        \begin{itemize}
+            \item \textbf{entry/:} Aktivitäten bei Eintritt in Zustand
+            \item \textbf{do/:} Aktivitäten während Aufenthalt im Zustand
+            \item \textbf{exit/:} Aktivitäten bei Verlassen des Zustandes
+        \end{itemize}
+        \centering
+        \includegraphics[width=0.3\textwidth]{Zustand-Elemente/0.png}
+    \end{minipage}
+\end{figure}
+
+
+
+\subsubsection{Elemente}
+
+\vspace{1em}
+
+\centering Zustandsübergang \\
+\vspace{1em}
+\centering \includegraphics[width=0.4\textwidth]{Zustand-Elemente/1.png}
+
+\vspace{1em}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Startzustand \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.2\textwidth]{Zustand-Elemente/2.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Endzustand \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.2\textwidth]{Zustand-Elemente/3.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Terminator \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.2\textwidth]{Zustand-Elemente/4.png}
+    \end{minipage}
+\end{figure}
+
+\vspace{1em}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Entscheidung \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.9\textwidth]{Zustand-Elemente/5.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Kreuzung/Verbindung \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.9\textwidth]{Zustand-Elemente/6.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering Teilung und Synchronisation \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.9\textwidth]{Zustand-Elemente/7.png}
+    \end{minipage}
+\end{figure}
+
+
+
+\raggedright \subsection{Paketdiagramme}
+
+\begin{itemize}
+    \item \textbf{Problem:} In großen Softwaresystemen ist es schwer den Überblick zu behalten
+    \begin{itemize}
+        \item \textit{Es existieren meist hunderte von Use Cases, Aktivitätsdiagramme, Klassen etc.}
+    \end{itemize}
+    \item \textbf{Ziel:} Auf hoher Ebene Struktur in die Systembeschreibung bringen
+    \item \textbf{Lösung:} Einteilung des Systems in Pakete (Abstraktion)
+\end{itemize}
+
+\textbf{Paketdiagramme benatworten die Frage:} “Wie kann ich mein System so aufteilen und darstellen, dass ich den Überblick behalte?”
+
+\begin{itemize}
+    \item Paket bündelt Elemente der UML sinnvoll, d.h. nach einem Zusammenhang
+    \item Paket entspricht einem in sich geschlossenen Teilsystem
+    \item Pakete können hierarchisch geschachtelt sein (ein Paket enthält Pakete)
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering Funktionale Gliederung \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.9\textwidth]{Paket-00.png}
+    \end{minipage}
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering Gliederung in Schichten \\
+        \vspace{1em}
+        \centering \includegraphics[width=0.9\textwidth]{Paket-01.png}
+    \end{minipage}
+\end{figure}
+
+\subsection{Elemente und Notation}
+
+\centering \includegraphics[width=0.8\textwidth]{Paket-03.png}
 
 
 
