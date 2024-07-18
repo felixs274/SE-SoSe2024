@@ -993,7 +993,7 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \textbf{Achtung:} Pfeil weist in die Richtung des Use-Cases, der erweitert werden soll
 
 
-\subsection{Use-Case Definitionen}
+\subsubsection{Use-Case Definitionen}
 
 \subsubsection*{Beispiele}
 
@@ -1364,11 +1364,68 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 
 \centering \includegraphics[width=0.90\textwidth]{Sequenz-03.png}
 
+\vspace{1em}
+
 \raggedright $ \rightarrow $ \textit{Beachte Lebenslinien und lokale Aufrufe!}
 
 \raggedright \subsubsection*{Von Use-Case zu Sequenzdiagramm}
 
 \centering \includegraphics[width=0.90\textwidth]{Sequenz-04.png}
+
+\newpage
+
+
+
+\raggedright \subsection{Kommunikationsdiagramme}
+
+\textbf{Kommunikationsdiagramme benatworten die Frage:} \\ “Welche Teile einer komplexen Struktur (aus einem Sequenzdiagramm) arbeiten wie zusammen, um eine bestimmte Funktion zu erfüllen?”
+
+\vspace{1em}
+
+\centering \includegraphics[width=0.75\textwidth]{Kommunikation-00.png}
+
+\vspace{1em}
+
+\raggedright \subsubsection*{Wann verwende ich ein Kommunikationsdiagramm?}
+
+\textbf{Wenn ich eine Interaktion unter folgenden Rahmenbedingungen darstellen möchte:}
+
+\small
+\begin{itemize}
+    \item Komplexe Struktur mit vielen Teilen, einfaches Zusammenwirken darstellen
+    \item Zeitliche Übergänge sind unwichtig
+    \item Zustände und Daten sind weniger wichtig
+    \item Grundsätzliches Verständnis wichtiger als Details
+    \item Einfache Interaktion ohne wichtige zeitliche Abhängigkeiten, Nebenläufigkeiten oder Kontrollelemente
+    \item Genau ein Zusammenspiel zeigen, keine Varianten
+\end{itemize}
+
+\vspace{1em}
+
+\raggedright \subsubsection*{Anwendungsbeispiel: Suchanfrage}
+
+\centering \includegraphics[width=0.75\textwidth]{Kommunikation-01.png}
+
+\tiny
+\begin{itemize}
+    \item Nachdem Anwender Suchanfrage formuliert hat, startet er die Suche (1: suchen).
+    \item Dann erzeugt die Bedienoberfläche aus der Suchanfrage eine Datenbankabfrage (1.1: erzeuge\_sql-query).
+    \item Erzeugte Datenbankanfrage wird gleichzeitig an alle Datenbanken geschickt, die durchsucht werden sollen (1.1.1*||: suche).
+    \item Suchergebnisse der Datenbanken werden von der Bedienoberfläche bearbeitet (1.1.1.1: bearbeiten), gesammelt (1.2: sammeln) und dem Anwender präsentiert (1.3: präsentieren).
+\end{itemize}
+
+
+\newpage
+
+
+
+\raggedright \subsection{Komponentendiagramme}
+
+
+
+\textbf{Kommunikationsdiagramme benatworten die Frage:} „Wie ist mein System strukturiert und wie werden diese Strukturen erzeugt?“
+
+
 
 
 \section{Objektorientiertes Design (OOD)} % --- Objektorientiertes Design (OOD) ------------------------------------------------------------------------------------
