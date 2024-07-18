@@ -1414,21 +1414,145 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \item Suchergebnisse der Datenbanken werden von der Bedienoberfläche bearbeitet (1.1.1.1: bearbeiten), gesammelt (1.2: sammeln) und dem Anwender präsentiert (1.3: präsentieren).
 \end{itemize}
 
-
 \newpage
 
 
 
 \raggedright \subsection{Komponentendiagramme}
 
+\vspace{1em}
+
+\small
+\textbf{Kommunikationsdiagramme benatworten die Frage:} \\ „Wie ist mein System strukturiert und wie werden diese Strukturen erzeugt?“
+
+\raggedright \subsubsection{Elemente}
+
+\centering \includegraphics[width=0.9\textwidth]{Komponenten-00.png}
+
+\raggedright \subsubsection*{Beispiel aus eigenem Projekt}
+
+\centering \includegraphics[width=0.9\textwidth]{Komponenten-01.png}
+
+\newpage
 
 
-\textbf{Kommunikationsdiagramme benatworten die Frage:} „Wie ist mein System strukturiert und wie werden diese Strukturen erzeugt?“
 
+\raggedright \subsection{Verteilungsdiagramme}
+
+\vspace{1em}
+
+\textbf{Kommunikationsdiagramme benatworten die Frage:} “Wie werden die Artefakte des Systems zur Laufzeit verteilt?” \\
+\tiny \textit{(Verteilung: Installation, Konfiguration, Bereitstellung oder Ausführung)}
+
+\small
+\begin{itemize}
+    \item Es zeigt die Zuordnung von Artefakten (also u.a. Softwarekomponenten) auf Hardware-Einheiten, die als Knoten bezeichnet werden
+    \item Stellt die Kommunikationsverbindungen und Abhängigkeiten zwischen Knoten dar
+\end{itemize}
+
+\vspace{2em}
+
+\raggedright \textbf{Grundsätzlich: nur sinnvoll, wenn es auch wirklich etwas zu verteilen gibt}
+
+\textbf{Dann ist es an drei Stellen sinnvoll:}
+\begin{itemize}
+    \item Systemkontext: “Wie kommuniziert mein System mit Nachbarsystemen”
+    \item Design-Phase: “Wie sieht eine Verteilung auf Umgebungen im Prinzip aus?”
+    \item Übergabe in den Betrieb: “Wie sieht die konkrete Verteilung aus (Rechnernamen, IP-Adressen, Portnummern, etc.)”
+\end{itemize}
+
+\vspace{2em}
+
+\raggedright \subsubsection{Elemente}
+
+\centering \includegraphics[width=0.9\textwidth]{Verteilung-00.png}
+
+\newpage
+
+\begin{minipage}[h]{0.45\textwidth}
+    \raggedright \includegraphics[width=0.9\textwidth]{Verteilung-01.png} 
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \raggedleft \includegraphics[width=0.9\textwidth]{Verteilung-02.png}   
+\end{minipage}
+
+\vspace{3em}
+
+\begin{minipage}[h]{0.45\textwidth}
+    \raggedright \includegraphics[width=0.9\textwidth]{Verteilung-03.png} 
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \raggedleft \includegraphics[width=0.9\textwidth]{Verteilung-04.png}   
+\end{minipage}
+
+\vspace{4em}
+
+
+
+\subsection{Zusammenfassung der Diagramme}
+
+\centering \includegraphics[width=0.9\textwidth]{UML-01.png}
+
+\newpage
+
+\raggedright \subsubsection*{Welche Fragen beantworten die UML-Diagramme?}
+\vspace{3em}
+\begin{itemize}
+    \item \textbf{Use-Case-Diagramm:}
+    \begin{itemize}
+        \item „Was leistet mein System für seine Umwelt (Nachbarsysteme, Stakeholder)?“
+    \end{itemize}
+    \item \textbf{Aktivitätsdiagramm:}
+    \begin{itemize}
+        \item „Wie läuft ein bestimmter flussorientierter Prozess oder Algorithmus ab?“
+    \end{itemize}
+    \item \textbf{Zustandsdiagramm:}
+    \begin{itemize}
+        \item „Welche Zustände kann ein Objekt, eine Schnittstelle, ein Use Case, … bei welchen Ereignissen annehmen?“
+    \end{itemize}
+    \item \textbf{Klassendiagramm:}
+    \begin{itemize}
+        \item „Aus welchen Klassen besteht mein System und wie stehen diese untereinander in Beziehung?“
+    \end{itemize}
+    \item \textbf{Paketdiagramm:}
+    \begin{itemize}
+        \item „Wie kann ich mein Modell so schneiden, dass ich den Überblick bewahre?“
+    \end{itemize}
+    \item \textbf{Objektdiagramm:}
+    \begin{itemize}
+        \item „Welche innere Struktur besitzt mein System zu einem bestimmten Zeitpunkt zur Laufzeit (Klassendiagramm-Schnappschuss)?“
+    \end{itemize}
+    \item \textbf{Sequenzdiagramm:}
+    \begin{itemize}
+        \item „Wer tauscht mit wem welche Informationen in welcher Reihenfolge aus?“
+    \end{itemize}
+    \item \textbf{Kommunikationsdiagramm:}
+    \begin{itemize}
+        \item „Wer kommuniziert mit wem? Wer ‚arbeitet‘ im System zusammen?“
+    \end{itemize}
+    \item \textbf{(Timingdiagramm:)}
+    \begin{itemize}
+        \item „Wann befinden sich verschiedene Interaktionspartner in welchem Zustand?“
+    \end{itemize}
+    \item \textbf{(Interaktionsübersichtdiagramm:)}
+    \begin{itemize}
+        \item „Wann läuft welche Interaktion ab?“
+    \end{itemize}
+    \item \textbf{Komponentendiagramm:}
+    \begin{itemize}
+        \item „Wie werden meine Klassen zu wiederverwendbaren, verwaltbaren Komponenten zusammengefasst und wie stehen diese miteinander in Beziehung?“
+    \end{itemize}
+    \item \textbf{Verteilungsdiagramm:}
+    \begin{itemize}
+        \item „Wie sieht das Einsatzumfeld (Hardware, Server, Datenbanken, …) des Systems aus? Wie werden die Komponenten zur Laufzeit wohin verteilt?“
+    \end{itemize}
+\end{itemize}
 
 
 
 \section{Objektorientiertes Design (OOD)} % --- Objektorientiertes Design (OOD) ------------------------------------------------------------------------------------
+
+
 
 
 \section{Entwurf und Implementierung} % --- Entwurf und Implementierung ------------------------------------------------------------------------------------
