@@ -1187,7 +1187,7 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \end{minipage}
 \end{figure}
 
-\subsection{Elemente und Notation}
+\subsubsection{Elemente und Notation}
 
 \centering \includegraphics[width=0.8\textwidth]{Paket-03.png}
 
@@ -1312,6 +1312,63 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \begin{minipage}[h]{0.45\textwidth}
     \centering \includegraphics[width=0.95\textwidth]{Objekt-01.png}
 \end{minipage}
+
+
+
+\raggedright \subsection{Analysemuster}
+
+!!!TODO!!!
+
+\newpage
+
+
+\raggedright \subsection{Sequenzdiagramme}
+
+
+\textbf{Sequenzdiagramme liefern eine Antwort auf die Frage:} „Wie läuft die Kommunikation in meinem System ab?“
+
+\vspace{2em}
+
+\centering \includegraphics[width=0.8\textwidth]{Sequenz-00.png}
+
+
+\raggedright \subsubsection{Methodenaufrufe}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.4\textwidth}
+    \raggedleft \includegraphics[width=1\textwidth]{Sequenz-02.png} 
+\end{minipage}
+\begin{minipage}[h]{0.55\textwidth}
+    \tiny \textbf{Synchroner Aufruf:}
+    \begin{itemize}
+        \item Empfangendes Objekt verarbeitet die Nachricht und
+        \item Liefert anschließend eine Ergebnisantwort zurück
+    \end{itemize}
+    \vspace{8em}
+    \tiny \textbf{Asynchroner Aufruf:}
+    \begin{itemize}
+        \item Quelle sendet Nachricht an Ziel
+        \item Quelle wartet nicht auf Antwort
+        \item Sondern fährt mit Verarbeitung fort
+    \end{itemize}    
+\end{minipage}
+
+\vspace{2em}
+
+\centering \includegraphics[width=0.8\textwidth]{Sequenz-01.png}
+
+\newpage
+
+\raggedright \subsubsection*{Beispiel aus eigenem Projekt}
+
+\centering \includegraphics[width=0.90\textwidth]{Sequenz-03.png}
+
+\raggedright $ \rightarrow $ \textit{Beachte Lebenslinien und lokale Aufrufe!}
+
+\raggedright \subsubsection*{Von Use-Case zu Sequenzdiagramm}
+
+\centering \includegraphics[width=0.90\textwidth]{Sequenz-04.png}
 
 
 \section{Objektorientiertes Design (OOD)} % --- Objektorientiertes Design (OOD) ------------------------------------------------------------------------------------
