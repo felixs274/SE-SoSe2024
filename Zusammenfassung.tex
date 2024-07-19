@@ -1558,10 +1558,125 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \centering \includegraphics[width=0.9\textwidth]{OOD-00.png}
 
 
-\raggedright \subsection{Designphase: Ziele, Aktionen und Ergebnisse}
+\raggedright \subsection{Designphase}
+\begin{itemize}
+    \item \textbf{Motivation:} Großprojekte haben oft komplexe Strukturen mit vielen Dialogen und Kernobjekten und erfordern ein großes Team über mehrere Jahre.
+    \item \textbf{Ziele der Designphase:} Übergang von den Anforderungen zur Realisierung. Strukturierung und Dekomposition zur Handhabung der Komplexität.
+    \item \textbf{Ergebnisse:} Softwarearchitekturmodell, Spezifikation der Systemkomponenten und deren Beziehungen.
+\end{itemize}
+
+\subsection{Architekturprinzipien}
+\begin{itemize}
+    \item \textbf{Korrektheit:} Erfüllung der Anforderungen und Sicherstellung nicht-funktionaler Anforderungen.
+    \item \textbf{Wiederverwendung:} Vermeidung von Doppelarbeit zur Erleichterung der Wartung und Weiterentwicklung.
+    \item \textbf{Verständlichkeit \& Präzision:} Gute Dokumentation und logische Struktur.
+    \item \textbf{Anpassbarkeit:} Einfache Erweiterbarkeit.
+\end{itemize}
+
+\subsection{Softwarearchitektur}
+\begin{itemize}
+    \item \textbf{Definition:} Modell eines gesamten Softwaresystems, bestehend aus internen Verhaltenskomponenten und deren Interaktion.
+    \item \textbf{Wichtigkeit:} Früheste Designentscheidung, die essenzielle Eigenschaften wie Modifizierbarkeit, Wartbarkeit und Performanz beeinflusst.
+\end{itemize}
+
+\newpage
+
+\subsection{Architektursichten}
+
+\subsubsection{4+1 Sichten nach Kruchten}
+
+\centering \includegraphics[width=0.4\textwidth]{Kruchten-00.png}
+
+\begin{itemize}
+    \item \textbf{Logische Sicht:}
+    \begin{itemize}
+        \item \textbf{Adressat:} Endanwender
+        \item \textbf{Fokus:} Funktionalität für Endanwender, Funktionale Anforderungen, Dienste, die dem Nutzer bereitgestellt werden
+        \item \textbf{Hilfsmittel:} Klassendiagramme, Sequenzdiagramme, Kommunikationsdiagramme
+    \end{itemize}
+    \item \textbf{Implementierungssicht:}
+    \begin{itemize}
+        \item \textbf{Adressat:} Entwickler, SW-Manager
+        \item \textbf{Fokus:} Systembeschreibung aus Entwicklersicht, Statische Organisation der Software, Software-Management
+        \item \textbf{Hilfsmittel:} Komponentendiagramme, Paketdiagramme
+    \end{itemize}
+    \item \textbf{Prozesssicht:}
+    \begin{itemize}
+        \item \textbf{Adressat:} Integrierer
+        \item \textbf{Fokus:} Dynamische Aspekte des Systems, Nicht-funktionale Anforderungen (Skalierbarkeit, Parallelität, Verteilung, Performanz)
+        \item \textbf{Hilfsmittel:} Aktivitätsdiagramme
+    \end{itemize}
+    \item \textbf{Physische Sicht:}
+    \begin{itemize}
+        \item \textbf{Adressat:} System-Engineers
+        \item \textbf{Fokus:} Nicht-funktionale Anforderungen mit Hinblick auf Hardware (Zuverlässigkeit, Erreichbarkeit, Performanz), Verteilung und Kommunikation der Hardware-Komponenten
+        \item \textbf{Hilfsmittel:} Verteilungsdiagramme
+    \end{itemize}
+    \item \textbf{Szenarien:}
+    \begin{itemize}
+        \item \textbf{Adressat:} Alle Stakeholder
+        \item \textbf{Fokus:} Systemkonsistenz, Ablaufbeschreibung zwischen Komponenten, Architekturüberprüfung
+        \item \textbf{Hilfsmittel:} Use-Case-Diagramme, Sequenzdiagramme
+    \end{itemize}
+\end{itemize}
+
+\newpage
 
 
-\section{Entwurf und Implementierung} % --- Entwurf und Implementierung ------------------------------------------------------------------------------------
+\raggedright \subsubsection{4 Sichten nach Starke}
+
+\centering \includegraphics[width=0.4\textwidth]{Starke-00.png}
+
+\begin{itemize}
+    \item \textbf{Kontextsicht:}
+    \begin{itemize}
+        \item \textbf{Frage:} Wie ist das System in seine Umgebung eingebettet?
+        \item \textbf{Beschreibung:} System als Black-Box, Schnittstellen zu Nachbarsystemen, Interaktion mit wichtigen Stakeholdern, wesentliche Teile der Infrastruktur
+        \item \textbf{Zweck:} Abstrakte Beschreibung (Vision) des Systems aus der Vogelperspektive
+        \item \textbf{UML-Diagramme:} Klassendiagramme (für die Struktur des Systems), Anwendungsfalldiagramme (für Interaktionen mit der Umwelt)
+    \end{itemize}
+    \item \textbf{Bausteinsicht:}
+    \begin{itemize}
+        \item \textbf{Frage:} Wie ist das System intern aufgebaut?
+        \item \textbf{Beschreibung:} Statische Strukturen des Systems, Subsysteme, Module, Pakete, Komponenten, Klassen etc.
+        \item \textbf{Zweck:} Unterstützung bei der Projektüberwachung, Zuteilung von Arbeitspaketen, Referenz für Entwickler
+        \item \textbf{UML-Diagramme:} Komponentendiagramme (für die Darstellung von Software-Bausteinen), Klassendiagramme (für die Struktur der Bausteine)
+    \end{itemize}
+    \item \textbf{Laufzeitsicht:}
+    \begin{itemize}
+        \item \textbf{Frage:} Wie läuft das System ab?
+        \item \textbf{Beschreibung:} Welche Bausteine existieren zur Laufzeit, wie interagieren Bausteine miteinander, dynamische Strukturen
+        \item \textbf{Hinweis:} Interessante Laufzeitszenarien, wie z.B. das Starten, Überwachen und Beenden des Systems
+        \item \textbf{UML-Diagramme:} Sequenzdiagramme (für Interaktionen zur Laufzeit), Aktivitätsdiagramme (für Abläufe zur Laufzeit), Kommunikationsdiagramme (für die Zusammenarbeit von Objekten)
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Verteilungssicht:}
+    \begin{itemize}
+        \item \textbf{Frage:} In welcher Umgebung läuft das System ab?
+        \item \textbf{Beschreibung:} Hardwarekomponenten, Netzwerktopologie, Speicher, Router, Firewalls und deren Interaktionen
+        \item \textbf{Bedeutung:} Relevant für Betreiber des Systems, Hardware-Architekten, Entwicklungsteam, Management und Projektleitung
+        \item \textbf{UML-Diagramme:} Verteilungsdiagramme (für die Zuordnung von Software-Bausteinen zu Hardware-Komponenten)
+    \end{itemize}
+\end{itemize}
+
+\raggedright \subsubsection{Weitere Sichten}
+\begin{itemize}
+    \item Szenarien, Datensicht, Sicherheitssicht, QS-Sicht
+    \item Nur notwendige Sichten in der erforderlichen Detailtiefe erstellen, um die Komplexität und Pflegeaufwand zu reduzieren
+\end{itemize}
+
+\subsubsection{Entwurf von Sichten}
+\begin{itemize}
+    \item Iterativer Entwurfsprozess aufgrund starker Wechselwirkungen und Abhängigkeiten der Sichten notwendig
+    \item Reihenfolge: Kontextsicht, dann Bausteinsicht, Laufzeitsicht oder Verteilungssicht je nach Projektanforderungen
+\end{itemize}
+
+
+
+
+\raggedright \section{Entwurf und Implementierung} % --- Entwurf und Implementierung ------------------------------------------------------------------------------------
 
 
 \section{Design Patterns} % --- Design Patterns ------------------------------------------------------------------------------------
