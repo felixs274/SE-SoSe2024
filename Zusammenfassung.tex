@@ -1565,7 +1565,7 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \item \textbf{Ergebnisse:} Softwarearchitekturmodell, Spezifikation der Systemkomponenten und deren Beziehungen.
 \end{itemize}
 
-\subsection{Architekturprinzipien}
+\subsection{Softwarearchitektur}
 \begin{itemize}
     \item \textbf{Korrektheit:} Erfüllung der Anforderungen und Sicherstellung nicht-funktionaler Anforderungen.
     \item \textbf{Wiederverwendung:} Vermeidung von Doppelarbeit zur Erleichterung der Wartung und Weiterentwicklung.
@@ -1573,7 +1573,6 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \item \textbf{Anpassbarkeit:} Einfache Erweiterbarkeit.
 \end{itemize}
 
-\subsection{Softwarearchitektur}
 \begin{itemize}
     \item \textbf{Definition:} Modell eines gesamten Softwaresystems, bestehend aus internen Verhaltenskomponenten und deren Interaktion.
     \item \textbf{Wichtigkeit:} Früheste Designentscheidung, die essenzielle Eigenschaften wie Modifizierbarkeit, Wartbarkeit und Performanz beeinflusst.
@@ -1673,20 +1672,532 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
     \item Reihenfolge: Kontextsicht, dann Bausteinsicht, Laufzeitsicht oder Verteilungssicht je nach Projektanforderungen
 \end{itemize}
 
+\newpage
+
+\subsection{Architekturprinzipien}
+
+\subsubsection{Merkmale schlechter Software}
+\begin{itemize}
+    \item \textbf{Steif (rigid)}: Schwierige und riskante Änderungen.
+    \item \textbf{Zerbrechlich (fragile)}: Fehler in einem Teil verursachen Fehler in anderen.
+    \item \textbf{Unbeweglich (immobile)}: Nicht wiederverwendbar, viele Abhängigkeiten.
+    \item \textbf{Zäh (viscous)}: Änderungen entgegen dem ursprünglichen Entwurf sind einfacher als konforme Änderungen.
+\end{itemize}
+
+\subsubsection{Merkmale guter Software}
+\begin{itemize}
+    \item \textbf{Einhalten von Prinzipien wie SOLID}:
+    \begin{itemize}
+        \item \textbf{Single Responsibility Principle}: Jede Klasse hat nur eine Verantwortlichkeit.
+        \item \textbf{Open/Closed Principle}: Softwaremodule sollen erweiterbar, aber nicht veränderbar sein.
+        \item \textbf{Liskov Substitution Principle}: Objekte der Basisklasse sollten durch Objekte der abgeleiteten Klasse ersetzt werden können, ohne das Verhalten zu ändern.
+        \item \textbf{Interface Segregation Principle}: Viele spezifische Schnittstellen sind besser als eine allgemeine.
+        \item \textbf{Dependency Inversion Principle}: Abhängigkeiten sollten zu Abstraktionen, nicht zu konkreten Implementierungen bestehen.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Kohäsion}
+\begin{itemize}
+    \item Kohäsion ist ein Maß für die Zusammengehörigkeit der Bestandteile einer Komponente.
+    \item \textbf{Hohe Kohäsion einer Komponente erleichtert}:
+    \begin{itemize}
+        \item Verständnis
+        \item Wartung
+        \item Anpassung
+    \end{itemize}
+    \item \textbf{Hohe Kohäsion wird erreicht durch}:
+    \begin{itemize}
+        \item Prinzipien der Objektorientierung (Datenkapselung)
+        \item Einhaltung von Regeln zur Paketbildung
+        \item Verwendung geeigneter Muster zu Kopplung und Entkopplung
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\subsubsection{Kopplung}
+\begin{itemize}
+    \item Kopplung ist ein Maß für die Abhängigkeiten zwischen Komponenten.
+    \item \textbf{Geringe Kopplung erleichtert}:
+    \begin{itemize}
+        \item Wartbarkeit
+        \item Stabilität von Systemen
+    \end{itemize}
+    \item \textbf{Arten der Kopplung}:
+    \begin{itemize}
+        \item Datenkopplung (gemeinsame Daten)
+        \item Schnittstellenkopplung (gegenseitiger Aufruf)
+        \item Strukturkopplung (gemeinsame Strukturelemente)
+    \end{itemize}
+    \item \textbf{Reduktion der Kopplung}:
+    \begin{itemize}
+        \item Kopplung kann nie auf Null reduziert werden
+        \item Schnittstellenkopplung ist akzeptabel, da höhere Flexibilität
+        \item Datenkopplung vermeiden (durch Objektorientierung meist gegeben)
+        \item Strukturkopplung vermeiden (z.B. keine Vererbung über Paketgrenzen hinweg)
+        \item Entkopplungsbeispiel: getter/setter-Methoden statt direkter Attributzugriff
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Interne Wiederverwendung}
+\begin{itemize}
+    \item Interne Wiederverwendung (reuse) ist ein Maß für die Ausnutzung von Gemeinsamkeiten zwischen Komponenten.
+    \item \textbf{Ziele der internen Wiederverwendung}:
+    \begin{itemize}
+        \item Reduktion der Redundanz
+        \item Erhöhung der Stabilität und Ergonomie
+    \end{itemize}
+    \item \textbf{Hilfsmittel für Wiederverwendung}:
+    \begin{itemize}
+        \item Im objektorientierten Entwurf: Vererbung, Parametrisierung
+        \item Im modularen und objektorientierten Entwurf: Module/Objekte mit allgemeinen Schnittstellen (Interfaces)
+    \end{itemize}
+    \item \textbf{Aber: Wiederverwendung kann die Kopplung erhöhen}:
+    \begin{itemize}
+        \item Schnittstellenkopplung und Strukturkopplung
+    \end{itemize}
+\end{itemize}
 
 
 
-\raggedright \section{Entwurf und Implementierung} % --- Entwurf und Implementierung ------------------------------------------------------------------------------------
+
+\subsubsection{DRY-Prinzip}
+
+Don‘t Repeat Yourself
+
+\begin{itemize}
+    \item \textbf{Wiederholungen}:
+    \begin{itemize}
+        \item Machen Arbeit
+        \item Werden irgendwann inkonsistent
+        \item Erschweren das Verständnis
+        \item Verschlechtern Performance beim Kompilieren und zur Laufzeit
+    \end{itemize}
+    \item \textbf{Vermeide Wiederholungen auf allen Ebenen der Softwareerstellung}:
+    \begin{itemize}
+        \item Code, Dokumentation, Tests, Datenbankschemata, \dots
+    \end{itemize}
+\end{itemize}
 
 
-\section{Design Patterns} % --- Design Patterns ------------------------------------------------------------------------------------
 
 
-\section{Testen} % --- Testen ------------------------------------------------------------------------------------
 
 
-\section{Vorgehensmodelle} % --- Vorgehensmodelle ------------------------------------------------------------------------------------
+\raggedright \section{Architekturmuster} % --- Architekturmuster ------------------------------------------------------------------------------------
 
+
+\subsection{Schichtenarchitektur}
+
+\begin{itemize}
+    \item Systeme werden in mehrere logisch zusammengehörige Schichten aufgeteilt.
+    \item Jede Schicht stellt Dienstleistungen über Schnittstellen zur Verfügung.
+    \item Zugriff nur auf die nächst niedrigere Schicht (strikte Architektur).
+\end{itemize}
+
+\subsubsection{Eigenschaften}
+\begin{itemize}
+    \item Schichten sind nur gekoppelt, wenn sie benachbart sind.
+    \item Koppelung auf Schnittstellenebene.
+    \item Änderungen wirken sich meist nur lokal aus.
+    \item Eine Schicht kann aus mehreren entkoppelten Teilen mit intern hohem Zusammenhalt bestehen.
+\end{itemize}
+
+\subsubsection{Vor- und Nachteile}
+
+\textbf{Vorteile}:
+\begin{itemize}
+    \item Unabhängigkeit der Schichten.
+    \item Verteilbar über verschiedene Rechnerknoten.
+    \item Minimierte Abhängigkeiten.
+\end{itemize}
+
+\textbf{Nachteile}:
+\begin{itemize}
+    \item Kann die Performance beeinträchtigen.
+    \item Schlechte Unterstützung für schichtübergreifende Änderungen.
+\end{itemize}
+
+
+\subsubsection{Die klassische 3-Schichten-Architektur}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.60\textwidth}
+    \tiny
+    \begin{enumerate}
+        \item[1.] \textbf{Presentation-Layer}
+        \begin{itemize}
+            \item Realisiert die Benutzeroberfläche.
+            \item Stellt Informationen dar und steuert die\\ Benutzerinteraktion.
+            \item Greift auf die Application-Layer zu.
+            \item Ermöglicht mehrere Oberflächen für dieselbe\\ Applikationslogik.
+        \end{itemize}
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}[h]{0.35\textwidth}
+    \raggedleft \includegraphics[width=1\textwidth]{Archmuster-00.png}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.45\textwidth}
+    \tiny
+    \begin{enumerate}
+        \item[2.] \textbf{Application-Layer}
+        \begin{itemize}
+            \item Realisiert die fachliche Funktion der Anwendung.
+            \item Kennt keine Informationen über die Presentation-Layer.
+            \item Verwaltet Objekte und Klassen des Domänenmodells.
+            \item Greift auf Dienste der Persistence-Layer zu.
+        \end{itemize}
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \tiny
+    \begin{enumerate}
+        \item[3.] \textbf{Persistence-Layer}
+        \begin{itemize}
+            \item Abstrahiert das Speichermedium von der Applikation.
+            \item Speichert Objekte des Domänenmodells persistent ab.
+            \item Übersetzt Objekte in ein für die Ablage notwendiges Format.
+        \end{itemize}
+    \end{enumerate}
+\end{minipage}
+
+\newpage
+
+\subsection{Blackboard-Muster}
+
+\begin{itemize}
+    \item Unabhängige Subsysteme, die auf ein gemeinsames Blackboard (Speicher/Datenbank) zugreifen.
+    \item Effiziente Methode für gemeinsame Datennutzung.
+    \item Schwache Kopplung zwischen Subsystemen.
+\end{itemize}
+
+\subsubsection{Vor- und Nachteile}
+\textbf{Vorteile}:
+\begin{itemize}
+    \item Effiziente gemeinsame Datennutzung.
+    \item Zentralisierung von Aufgaben wie Datensicherung und Zugriffskontrolle.
+\end{itemize}
+
+\textbf{Nachteile}:
+\begin{itemize}
+    \item Subsysteme müssen dasselbe Datenformat nutzen.
+    \item Integration neuer Subsysteme kann schwierig sein.
+    \item Blackboard-Komponente als potenzieller Flaschenhals.
+\end{itemize}
+
+
+\subsection{Peer-to-Peer}
+
+\begin{itemize}
+    \item Gleichberechtigte Komponenten (Peers), die gleichzeitig als Server und Client agieren.
+    \item Geeignet für ausfallsichere Datenverteilung wie bei Filesharing oder verteiltem Rechnen.
+\end{itemize}
+
+\subsubsection{Vor- und Nachteile}
+\textbf{Vorteile}:
+\begin{itemize}
+    \item Hohe Ausfallsicherheit und Parallelität.
+    \item Kein zentraler Flaschenhals.
+\end{itemize}
+
+\textbf{Nachteile}:
+\begin{itemize}
+    \item Auffinden von Peers in großen Netzen kann schwierig sein.
+    \item Fehlerbehandlung kann schwierig sein.
+\end{itemize}
+
+
+
+\subsection{Plug-In-Architektur}
+
+\begin{itemize}
+    \item Dynamische Erweiterung des Systems um neue Funktionen ohne Modifikation des Kernsystems.
+    \item Externe Module können über Schnittstellen hinzugefügt werden.
+\end{itemize}
+
+
+
+\subsection{Model View Controller (MVC)}
+
+\begin{itemize}
+    \item Aufteilung eines Programms in drei Komponenten:
+    \begin{itemize}
+        \item Model: Daten und Geschäftslogik.
+        \item View: Präsentation und Benutzerinteraktionen.
+        \item Controller: Steuerung.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Thin vs. Fat Client}
+\subsubsection{Thin Client}
+\begin{itemize}
+    \item Nur die Benutzerschnittstelle ist auf dem Client vorhanden.
+\end{itemize}
+
+\subsubsection{Fat Client}
+\begin{itemize}
+    \item Teile oder die gesamte Fachlogik sind auf dem Client.
+    \item Entlastung des Servers, aber zusätzliche Anforderungen an die Clients.
+\end{itemize}
+
+\vspace{4em}
+
+\raggedright \section{Feindesign und Implementierung} % --- Feindesign und Implementierung ------------------------------------------------------------------------------------
+
+\centering \includegraphics[width=0.9\textwidth]{Feindesign-00.png}
+
+\centering \includegraphics[width=0.8\textwidth]{Feindesign-01.png}
+
+\raggedright \subsection{Wiederverwendungsebenen}
+
+\begin{itemize}
+    \item Abstraktionsebene:
+    \begin{itemize}
+        \item Keine direkte Wiederverwendung von Software
+        \item Sondern Nutzung erfolgreicher Entwurfs- und Architekturmuster
+    \end{itemize}
+    \item Objektebene:
+    \begin{itemize}
+        \item Verwendung von Objekten aus Bibliotheken
+        \item Dazu: Auffinden von Bibliotheken, die gewünschte Funktionalität bieten
+    \end{itemize}
+    \item Komponentenebene:
+    \begin{itemize}
+        \item Verwendung von Frameworks
+    \end{itemize}
+    \item Systemebene:
+    \begin{itemize}
+        \item Wiederverwendung von gesamten Anwendungssystemen
+        \item Üblich: Neukonfiguration des Systems
+    \end{itemize}
+\end{itemize}
+
+
+\raggedright \subsubsection{Vorteile und Kosten}
+
+\begin{itemize}
+    \item Vorteile von wiederverwendbaren Systemen:
+    \begin{itemize}
+        \item Schnellere Entwicklung
+        \item Weniger Entwicklungsrisiko
+        \item Kostengünstiger
+        \item Zuverlässiger (bereits getestet)
+    \end{itemize}
+    \item Mögliche Kosten:
+    \begin{itemize}
+        \item Suche und Evaluierung
+        \item Kaufkosten
+        \item Customizing und Konfiguration
+        \item Integration verschiedener Komponenten
+    \end{itemize}
+\end{itemize}
+
+
+\raggedright \subsection{Konfigurationsverwaltung}
+
+\begin{itemize}
+    \item Grundlegende Aktivitäten:
+    \begin{itemize}
+        \item Versionsmanagement:
+        \begin{itemize}
+            \item Verwaltung und Kontrolle verschiedener Versionen der erstellten Artefakte
+            \item Koordinierung der Entwicklung von mehreren Programmierern
+            \item Verhindert Codeüberschreibungen von unterschiedlichen Programmierern
+        \end{itemize}
+        \item Systemintegration:
+        \begin{itemize}
+            \item Unterstützung bei Festlegung, welche Softwareversion welche Komponenten verwendet
+            \item Ermöglicht automatisierte Systemerzeugung (Buildsysteme)
+        \end{itemize}
+        \item Problemverfolgung:
+        \begin{itemize}
+            \item Tracking von Programmierfehlern und anderen Problemen
+            \item Verfolgung, wer welche Probleme löst und wann
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+
+\raggedright \subsection{Host-Ziel-Entwicklung}
+
+\begin{itemize}
+    \item Allgemein:
+    \begin{itemize}
+        \item Development Platform
+        \item Production/Execution Platform
+        \item Plattform umfasst mehr als nur Hardware (z.B. OS, DBMS, IDE, ...)
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\section{Design Patterns} % --- Design Patterns ------------------------------------------------------------------------------
+
+Design Patterns sind bewährte, wiederverwendbare Lösungen für häufig auftretende Probleme bei der Softwareentwicklung. Sie bieten eine standardisierte Methode zur Lösung spezifischer Designprobleme, ohne dabei konkrete Implementierungen vorzugeben.
+
+\vspace{2em}
+
+\centering \includegraphics[width=0.75\textwidth]{Designpatterns-00.png}
+
+\raggedright
+
+\vspace{2em}
+
+\section{Template für Design Patterns}
+\begin{itemize}
+    \item \textbf{Patternname}: Kurzer, beschreibender Name.
+    \item \textbf{Motivation}: Grund für das Lernen des Patterns.
+    \item \textbf{Zweck}: Beschreibung des Designproblems, das gelöst werden soll.
+    \item \textbf{Lösung}: Struktur- und Interaktionsdiagramme.
+    \item \textbf{Beispielcode}: Implementierung.
+    \item \textbf{Diskussion}: Mögliche Probleme und deren Lösungen.
+    \item \textbf{Verwandte Patterns}: Andere relevante Patterns.
+\end{itemize}
+
+\newpage
+
+\subsection{Diskussion ausgewählter Design Patterns}
+
+\subsubsection{Singleton}
+\begin{itemize}
+    \item \textbf{Ziel}: Sicherstellen, dass eine Klasse nur eine Instanz hat.
+    \item \textbf{Lösung}: Privater Konstruktor und eine \texttt{getInstance()} Methode.
+    \item \textbf{Diskussion}: Performance durch \texttt{synchronized}, Alternativen.
+\end{itemize}
+
+\subsubsection{Iterator}
+\begin{itemize}
+    \item \textbf{Ziel}: Einheitliche Traversierung von Elementen einer Sammlung.
+    \item \textbf{Lösung}: Trennung von Iterationslogik und Sammlung.
+    \item \textbf{Diskussion}: Verwendung von Interfaces zur Flexibilisierung.
+\end{itemize}
+
+\subsubsection{Strategy}
+\begin{itemize}
+    \item \textbf{Ziel}: Dynamisches Austauschen von Verhalten zur Laufzeit.
+    \item \textbf{Lösung}: Abstrakte Strategie-Klasse, konkrete Strategien und eine Kontext-Klasse, die die Strategie hält.
+    \item \textbf{Diskussion}: Datentransfer zwischen Context und Strategy, Kopplung reduzieren.
+\end{itemize}
+
+\subsubsection{Observer}
+\begin{itemize}
+    \item \textbf{Ziel}: Benachrichtigung von Objekten bei Zustandsänderungen.
+    \item \textbf{Lösung}: Das Subjekt verwaltet eine Liste von Beobachtern und benachrichtigt diese bei Zustandsänderungen.
+    \item \textbf{Diskussion}: Lose Kopplung, Push/Pull Benachrichtigungen.
+\end{itemize}
+
+\subsubsection{Decorator}
+\begin{itemize}
+    \item \textbf{Ziel}: Erweiterung des Verhaltens bestehender Klassen zur Laufzeit.
+    \item \textbf{Lösung}: Dekorierer-Klassen, die das Verhalten der ursprünglichen Klasse erweitern.
+    \item \textbf{Diskussion}: Flexibilität versus Vererbung, Wartbarkeit.
+\end{itemize}
+
+\newpage
+
+
+\section{Factory Pattern} % --- Factory Pattern ---------------------------------------------------------------
+
+\subsection{Fabrikmethode}
+
+Ermöglicht es einer Klasse, die Erstellung von Objekten zu delegieren, ohne die konkrete Implementierung der zu erzeugenden Objekte zu kennen.
+
+\subsubsection*{Vorteile}
+\begin{itemize}
+    \item Lose Kopplung zwischen Klient und Produkten
+    \item Kapselung der Objekterstellung
+    \item Trennung von Produkterstellung und -nutzung
+\end{itemize}
+
+\subsubsection*{Nachteile}
+\begin{itemize}
+    \item Erhöhte Komplexität durch Subklassenbildung
+    \item Zusätzlicher Programmcode erforderlich
+\end{itemize}
+
+\subsection{Abstrakte Fabrik}
+
+Ermöglicht die Erstellung von Objektfamilien, ohne deren konkrete Implementierungen zu kennen.
+
+\subsubsection*{Vorteile}
+\begin{itemize}
+    \item Kapselung der Objekterstellung
+    \item Entkopplung von Klient und konkreten Implementierungen
+    \item Einfache Erweiterung um neue Produktfamilien
+    \item Konsistente Nutzung von Produktfamilien
+\end{itemize}
+
+\subsubsection*{Nachteile}
+\begin{itemize}
+    \item Hohe Komplexität
+    \item Neue Produkte erfordern Änderungen in der gesamten Fabrik-Hierarchie
+\end{itemize}
+
+
+\subsection{Praxisrelevanz}
+
+\vspace{1em}
+
+\begin{minipage}[h]{0.45\textwidth}
+    \subsubsection*{Fabrikmethode}
+    \begin{itemize}
+        \item Häufig verwendet
+        \item Reduziert die Komplexität für den Klienten
+        \item Erleichtert die Testbarkeit
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \subsubsection*{Abstrakte Fabrik}
+    \begin{itemize}
+        \item Weniger häufig verwendet
+        \item Nützlich in Szenarien mit konsistenten Produktfamilien \\ (z.B. Look and Feel in Benutzeroberflächen)
+    \end{itemize}
+\end{minipage}
+
+\newpage
+
+
+\section{Testen}
+
+\begin{itemize}
+    \item Tests sind notwendig, um sicherzustellen, dass Software korrekt funktioniert und die Anforderungen erfüllt.
+    \item Unterscheidung zwischen Verifikation (Überprüfung, ob das Produkt richtig gebaut wurde) und Validierung (Überprüfung, ob das richtige Produkt gebaut wurde).
+\end{itemize}
+
+\subsection{Arten von Qualitätssicherungsmaßnahmen}
+\begin{itemize}
+    \item \textbf{Verifikation:} Formale Beweise der Korrektheit, z.B. mittels Model Checking oder Hoare-Kalkül.
+    \item \textbf{Testen:} Durchführung von Tests in verschiedenen Stufen, darunter Modultests, Integrationstests und Abnahmetests.
+    \item \textbf{Prüfen:} Menschliche Begutachtung wie Inspektionen, Walkthroughs und Reviews.
+\end{itemize}
+
+\subsection{Testphasen}
+
+\subsubsection{Entwicklertests}
+\begin{itemize}
+    \item Tests, die während der Entwicklung durchgeführt werden, um einzelne Module, Komponenten und das gesamte System zu überprüfen.
+    \item \textbf{Modultests:} Testen einzelner Funktionalitäten und Zustände von Objekten.
+    \item \textbf{Komponententests:} Fokussieren sich auf die Interaktion zwischen zusammengesetzten Objekten.
+    \item \textbf{Systemtests:} Prüfen das Zusammenspiel aller Komponenten.
+\end{itemize}
+
+\subsubsection{Freigabetests}
+\begin{itemize}
+    \item Separates Testteam prüft die vollständige Version des Systems, bevor es an Benutzer freigegeben wird.
+    \item Blackbox-Tests und Leistungstests werden durchgeführt.
+\end{itemize}
+
+\subsubsection{Benutzertests}
+\begin{itemize}
+    \item Tests durch die Endbenutzer in ihrer eigenen Umgebung.
+    \item Beispiele sind Alphatests (mit Entwicklerunterstützung) und Betatests (unabhängige Tests durch Benutzer).
+\end{itemize}
 
 
 
