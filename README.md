@@ -1,5 +1,4 @@
 # SE-SoSe2024
-Software Engineering SoSe 2024
 
 **Telefon Seelsorge** </br>
 24 Stunden erreichbar </br>
