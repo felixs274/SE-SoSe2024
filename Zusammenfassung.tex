@@ -2478,11 +2478,11 @@ $\rightarrow$ Ein DU-Paar (def-use-Paar) liegt nur dann vor, wenn das \texttt{de
 \begin{itemize}
     \item Nutze jedes def (All-Defs-Coverage: ADC)
     \begin{itemize}
-        \item $\rightarrow$ Jedes \texttt{def} erreicht \textbf{ein} \texttt{use}
+        \item Jedes \texttt{def} erreicht \textbf{ein} \texttt{use}
     \end{itemize}
     \item Gelange zu jedem use (All-Uses-Coverage: AUC)
     \begin{itemize}
-        \item $\rightarrow$ Jedes \texttt{def} erreicht alle möglichen \texttt{use}
+        \item Jedes \texttt{def} erreicht alle möglichen \texttt{use}
     \end{itemize}
     \item Verfolge alle DU-Pfade (All-DU-Paths-Coverage: ADUPC)
 \end{itemize}
@@ -2498,20 +2498,198 @@ $\rightarrow$ Ein DU-Paar (def-use-Paar) liegt nur dann vor, wenn das \texttt{de
 
 \section{Vorgehensmodelle}
 
+Nutze Modelle für Plansung des gesamten Projekts
+
+$\rightarrow$ bringt gemeinsamen Nenner \& Verständnis
+
+$\rightarrow$ Vollständigkeit, Kontrolle, Lernerfahrung
+
+\vspace{1em}
+
+Planung, Koordination, Korrektur, Verbesserung
+
+$\rightarrow$ höhere Qualität, effizientere Produktion, bessere Wartbarkeit
+
+\vspace{2em}
+
+\centering \includegraphics[width=0.6\textwidth]{Vorgehen-00.png} 
+
+\raggedright
 
 
 \subsection{Wasserfall-Modell}
 
+\centering \includegraphics[width=0.6\textwidth]{Vorgehen-01.png} 
+
+\raggedright
+
+\newpage
+
 \subsection{V-Modell}
+
+Umfangreiche Erweiterung des Waserfall-Modells
+
+\vspace{1em}
+
+\centering \includegraphics[width=0.6\textwidth]{Vorgehen-02.png} 
+
+\raggedright
+
+\textbf{Vorteile:}
+\begin{itemize}
+    \item Zu jeder Entwicklungsphase (links) existiert eine Qualitätssicherungsphase (rechts)
+    \item Qualitätssicherung also in Prozess integriert (Validierung und Verifikation)
+    \item Kann für konkrete Projekte angepasst werden (tailoring)
+    \item Organisationsneutral: setzt keine speziellen Strukturen beim Anwender voraus
+\end{itemize}
+
+\textbf{Nachteile:}
+\begin{itemize}
+    \item Muss für konkrete Projekte angepasst werden (tailoring) → Mitarbeiterschulung
+    \item Viel Bürokratie (Dokumentation)
+\end{itemize}
+
 
 \subsection{Prototypen}
 
+
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=0.9\textwidth]{Vorgehen-03.png} 
+    \raggedright
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \tiny
+    \begin{itemize}
+        \item Verbessung mit jeder Iteration
+        \item Prototypen immer lauffähig gehalten
+    \end{itemize}
+    
+    \raggedleft $\rightarrow$ Prototyp zu Endprodukt
+\end{minipage}
+
+\raggedright
+\normalsize
+
+\textbf{Vorteile:}
+\begin{itemize}
+    \item Zentrales Kommunikationsobjekt für Kunde / Hersteller, + Risikominimierung
+    \item Akzeptanz für Kunde durch Integration, + Einfache Einführung
+\end{itemize}
+
+\textbf{Nachteile:}
+\begin{itemize}
+    \item Datum unvorhersehbar
+    \item Problematisch in Großprojekten
+\end{itemize}
+
+\subsubsection{throw-away prototyping}
+
+\begin{enumerate}
+    \item Prototyp erzeugenden
+    \item Diskutieren
+    \item Entsorgen
+    \item Neuer Prototyp mit neuen Wissen
+\end{enumerate}
+
+\textbf{Vorteile:}
+\begin{itemize}
+    \item Lernen aus Prototyp
+\end{itemize}
+
+\textbf{Nachteile:}
+\begin{itemize}
+    \item Eingang des Wegwerfprototypen in Produkt
+    \item Zusätzlicher Entwicklungsaufwand
+\end{itemize}
+
+\vspace{3em}
+
+
 \subsection{Iterative Modelle}
+
+\begin{itemize}
+    \item Entwicklungsprozess besteht aus Folge von Zyklen (Iterationen)
+    \item Am Ende jeder Iteration: neue (ausführbare) Version des Produktes
+    \item Neue Version verbessert bzw. erweitert Funkionsumfang der letzten
+\end{itemize}
+
+
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=0.9\textwidth]{Vorgehen-04.png} 
+    \raggedright
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \tiny
+    \textbf{Vorteile:}
+    \begin{itemize}
+        \item Dynamische Reaktion auf Risiken 
+        \item Zwischenergebnisse mit Kunde diskutierbar
+    \end{itemize}
+    
+    \textbf{Nachteile:}
+    \begin{itemize}
+        \item Planung schwierig, Vertragssituation, ungeduldige Kunden
+    \end{itemize}
+\end{minipage}
+
+\normalsize
+
+\newpage
 
 \subsection{Inkrementelle Entwicklung}
 
-\subsection{Iterativ-Inkrementelle Entwicklung (Spiralmodell)}
+Anforderungen vollständig erfassen und modellieren
+
+Auf Kernanforderungen des Auftraggebers konzentrieren
+
+\begin{itemize}
+    \item Zunächst nur Kernsystem entwickeln (Null-Version)
+    \item Kernsystem ausliefern
+    \item Anwender sammeln Erfahrungen und äußern Wünsche
+\end{itemize}
+
+\centering \includegraphics[width=0.6\textwidth]{Vorgehen-05.png} 
+
+\raggedright
+
+
+\subsection{Iterativ-Inkrementelle Entwicklung }
+
+
+\begin{minipage}[h]{0.2\textwidth}
+    \centering \includegraphics[width=0.9\textwidth]{Vorgehen-06.png} 
+    \raggedright
+\end{minipage}
+\begin{minipage}[h]{0.75\textwidth}
+    \begin{itemize}
+        \item Projekt in kleine Teilschritte zerlegt
+        \item Pro Schritt neue Funktionalität (Inkrement) + Überarbeitung existierender Ergebnisse (Iteration)
+        \item n + 1-ter Schritt kann Probleme des n-ten Schritts lösen
+    \end{itemize}
+\end{minipage}
+
+
+\subsubsection{Spiralmodell}
+
+\centering \includegraphics[width=0.6\textwidth]{Vorgehen-07.png} 
+
+\raggedright
+
+\begin{itemize}
+    \item Eines der ersten Entwicklungsmodelle, die die Probleme von Wasserfall- und V-Modell überwanden
+    \item Iteratives (inkrementelles) Entwicklungsmodell
+    \item Phasen werden in einer Spirale durchlaufen
+    \item Unterstützt iterative Entwicklung von Anforderungen und Prototypen
+    \item Am Ende jeder Iteration: Planung der folgenden Iteration
+\end{itemize}
+
+\newpage
+
+
 
 \subsection{Agile Methoden (Scrum)}
+
+
+
 
 \end{document}
