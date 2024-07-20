@@ -5,7 +5,9 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{adjustbox}
@@ -1716,6 +1718,18 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 \newpage
 
 \subsubsection{Kopplung}
+
+
+
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=1\textwidth]{Kopplung-00.JPG}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=1\textwidth]{Kopplung-01.JPG}
+\end{minipage}
+
+\raggedright
+
 \begin{itemize}
     \item Kopplung ist ein Maß für die Abhängigkeiten zwischen Komponenten.
     \item \textbf{Geringe Kopplung erleichtert}:
@@ -1865,7 +1879,7 @@ Don‘t Repeat Yourself
     \end{enumerate}
 \end{minipage}
 
-\newpage
+\vspace{10em}
 
 \subsection{Blackboard-Muster}
 
@@ -1889,13 +1903,25 @@ Don‘t Repeat Yourself
     \item Blackboard-Komponente als potenzieller Flaschenhals.
 \end{itemize}
 
+\newpage
 
 \subsection{Peer-to-Peer}
 
-\begin{itemize}
-    \item Gleichberechtigte Komponenten (Peers), die gleichzeitig als Server und Client agieren.
-    \item Geeignet für ausfallsichere Datenverteilung wie bei Filesharing oder verteiltem Rechnen.
-\end{itemize}
+\vspace{1em}
+
+\begin{minipage}[h]{0.2\textwidth}
+    \centering \includegraphics[width=0.75\textwidth]{PtP-00.png} \raggedright
+\end{minipage}
+\begin{minipage}[h]{0.75\textwidth}
+    \begin{itemize}
+        \item Gleichberechtigte Komponenten (Peers), die gleichzeitig als Server und Client agieren.
+        \item Geeignet für ausfallsichere Datenverteilung wie bei Filesharing oder verteiltem Rechnen.
+    \end{itemize}
+\end{minipage}
+
+
+
+
 
 \subsubsection{Vor- und Nachteile}
 \textbf{Vorteile}:
@@ -1949,34 +1975,22 @@ Don‘t Repeat Yourself
 
 \raggedright \section{Feindesign und Implementierung} % --- Feindesign und Implementierung ------------------------------------------------------------------------------------
 
-\centering \includegraphics[width=0.9\textwidth]{Feindesign-00.png}
+\centering \includegraphics[width=0.9\textwidth]{Feindesign-00.png} 
 
 \centering \includegraphics[width=0.8\textwidth]{Feindesign-01.png}
+
+\vspace{10em}
 
 \raggedright \subsection{Wiederverwendungsebenen}
 
 \begin{itemize}
-    \item Abstraktionsebene:
-    \begin{itemize}
-        \item Keine direkte Wiederverwendung von Software
-        \item Sondern Nutzung erfolgreicher Entwurfs- und Architekturmuster
-    \end{itemize}
-    \item Objektebene:
-    \begin{itemize}
-        \item Verwendung von Objekten aus Bibliotheken
-        \item Dazu: Auffinden von Bibliotheken, die gewünschte Funktionalität bieten
-    \end{itemize}
-    \item Komponentenebene:
-    \begin{itemize}
-        \item Verwendung von Frameworks
-    \end{itemize}
-    \item Systemebene:
-    \begin{itemize}
-        \item Wiederverwendung von gesamten Anwendungssystemen
-        \item Üblich: Neukonfiguration des Systems
-    \end{itemize}
+    \item Nutzung erfolgreicher Entwurfs- und Architekturmuster
+    \item Verwendung von Bibliotheken
+    \item Verwendung von Frameworks
+    \item Wiederverwendung von gesamten Anwendungssystemen
 \end{itemize}
 
+\newpage
 
 \raggedright \subsubsection{Vorteile und Kosten}
 
@@ -2035,7 +2049,7 @@ Don‘t Repeat Yourself
 \end{itemize}
 
 
-
+\newpage
 
 \section{Design Patterns} % --- Design Patterns ------------------------------------------------------------------------------
 
@@ -2161,7 +2175,7 @@ Ermöglicht die Erstellung von Objektfamilien, ohne deren konkrete Implementieru
 \end{minipage}
 
 \newpage
-
+ 
 
 \section{Testen}
 
@@ -2199,6 +2213,305 @@ Ermöglicht die Erstellung von Objektfamilien, ohne deren konkrete Implementieru
     \item Beispiele sind Alphatests (mit Entwicklerunterstützung) und Betatests (unabhängige Tests durch Benutzer).
 \end{itemize}
 
+\newpage
 
+
+
+\section{Graphen}
+
+Ein Graph \textbf{G = $ (V, V_0, V_f, E) $} ist definiert als:
+
+\begin{itemize}
+    \item V = Knotenmenge
+    \item $V_0$ = Startknotenmenge
+    \item $V_f$ = Endknotenmenge
+    \item E = Kantenmenge
+\end{itemize}
+
+Die Länge eines Pfades ist die Anzahl der Kanten, aus denen er besteht
+
+\subsection*{SESE-Graphen (Single-Entry, Single-Exit)}
+
+\centering \includegraphics[width=0.75\textwidth]{Graphen-00.png} \raggedright
+
+\subsection*{Testanforderungen (TR)}
+
+Beschreiben Eigenschaften von Testpfaden (z.B. "beinhaltet jeden erreichbaren Knoten von G")
+
+\subsection*{Strukturelle Überdeckungskriterien}
+
+Sind auf einem Graphen lediglich über Knoten und Kanten definiert
+
+Beispiele:
+
+\begin{itemize}
+    \item Knotenüberdeckung (NC: node coverage)
+    \item Kantenüberdeckung (EC: edge coverage)
+    \item Kantenpaar-Überdeckung (EPC: edge-pair coverage)
+\end{itemize}
+
+\subsection*{Datenfluss Überdeckungskriterien}
+
+Verlangen, dass ein Graph mit weiteren Informationen (Verweise auf Variablen) angereichert ist
+
+\newpage
+
+\subsection{Knotenüberdeckung (NC)}
+
+Alle erreichbaren Knoten im Graphen müssen besucht werden!
+
+Intuitiv: “jeder Befehl muss ausführbar sein”
+
+\vspace{1em}
+\textbf{Beispiel:}
+
+\begin{minipage}[h]{0.3\textwidth}
+    \centering \includegraphics[width=0.4\textwidth]{Graphen-01.png} 
+\end{minipage}
+\begin{minipage}[h]{0.6\textwidth}
+    TR = \{ 1, 2, 3 \}, Testpfad = [1, 2, 3]
+\end{minipage}
+
+
+\subsection{Kantenüberdeckung (EC)}
+
+TR enthält jeden erreichbaren Pfad der Länge maximal \textbf{1}, in G!
+
+\vspace{1em}
+\textbf{Beispiel:}
+
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=0.9\textwidth]{Graphen-02.png} \\
+    Bemerkung: Testpfad [1,2,3] erfüllt Knotenüberdeckung von G
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \centering \includegraphics[width=0.2\textwidth]{Graphen-03.png} \\
+    Auch Graphen erlaubt, die einen Knoten und keine Kanten besitzen!
+\end{minipage}
+
+
+\subsection{Kantenpaar-Überdeckung (EPC)}
+
+TR enthält jeden erreichbaren Pfad der Länge maximal \textbf{2}, in G!
+
+\vspace{1em}
+\textbf{Beispiel:}
+
+\includegraphics[width=0.5\textwidth]{Graphen-04.png} \raggedright
+
+
+\subsection{Vollständige Pfadüberdeckung (CPC)}
+
+TR enthält jeden (erreichbaren) Pfad in G
+
+\newpage
+
+\subsection*{Zusammenfassung \& Beispiel}
+
+\centering \includegraphics[width=0.75\textwidth]{Graphen-05.png} 
+
+\raggedright
+
+
+
+\subsection{Einfache Pfade \& Primpfade}\label{subsec:EinfachePfadePrimPfade}
+
+\subsubsection*{Einfache Pfade}
+
+Pfad, auf dem kein Knoten mehrmals vorkommt (Außer erster und letzter Knoten)
+
+\subsubsection*{Primpfade}
+
+Einfacher Pfad, der nicht als echter Teilpfad eines anderen einfachen Pfades auftritt
+
+\vspace{2em}
+
+\textbf{Beispiel:}
+
+\centering \includegraphics[width=0.75\textwidth]{Graphen-06.png} 
+
+\vspace{0.5em}
+
+\tiny \raggedleft $\rightarrow$ \textit{Primpfade ist Teilmenge von Einfache Pfade}
+
+\normalsize
+
+\raggedright
+
+\vspace{2em}
+
+\subsection{Primpfad-Überdeckung (PPC)}
+
+Fordert, dass Zyklen sowohl ausgeführt als auch übersprungen werden können sollen!\\
+TR enthält jeden Primpfad in G!
+
+\begin{itemize}
+    \item Besuche alle Pfade der Länge 0, 1, 2, 3, ...
+    \item Umfasst Knoten- und Kantenüberdeckung
+    \item Umfasst fast (aber nicht ganz) EPC
+\end{itemize}
+
+
+\newpage
+
+\subsection{Primpfad Algorithmus}
+
+\vspace{1em}
+
+\begin{enumerate}
+    \item Berechne einfache Pfade aufsteigend (Siehe Beispiel \cref{subsec:EinfachePfadePrimPfade})
+    \begin{itemize}
+        \item Markiere {\color{BrickRed}Rot}: Nicht erweiterbar
+        \item Markiere {\color{ForestGreen}Grün}: Zyklus
+    \end{itemize}
+    \item Alle einfachen, ungefärbten Löschen (Keine Erweiterung möglich)
+    \item Teilpfade löschen
+\end{enumerate}
+
+$\rightarrow$ Testpfad ermitteln: Nimm längsten Pfand und ergänze alle zum Start \& Ende führenden Knoten
+
+
+
+
+\subsection{Touren}
+
+\vspace{1em}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-07.png} 
+
+\raggedright
+
+\newpage
+
+\subsection{Code zu Graph}
+
+\vspace{1em}
+
+Knoten = {\color{BrickRed}Befehle}\\
+Kanten = {\color{ForestGreen}Kontrollfluss}
+
+\vspace{1em}
+
+\subsubsection{if-Befehl}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-08.png} 
+
+\raggedright
+
+\subsubsection{if-return-Befehl}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-09.png} 
+
+\raggedright
+
+\newpage
+
+\subsubsection*{Schleifen}
+
+\vspace{1em}
+
+\begin{itemize}
+    \item Bei Schleifen müssen zusätzliche Knoten eingefügt werden
+    \item Diese Knoten stellen weder Befehle noch Basisblöcke dar
+\end{itemize}
+
+\subsubsection{While}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-10.png} 
+
+\raggedright
+
+\subsubsection{For}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-11.png} 
+
+\raggedright
+
+\subsubsection{break, continue}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-12.png} 
+
+\raggedright
+
+\subsubsection{switch-case}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-13.png} 
+
+\raggedright
+
+\newpage
+
+\subsection{Datenfluss-Überdeckungskriterien}
+
+\subsubsection{def \& use}
+
+\begin{itemize}
+    \item \textbf{def}: Eine Stelle, an der ein Wert im Speicher gespeichert wird.
+    \begin{itemize}
+        \item Variable auf der linken Seite einer Zuweisung (z.B. \texttt{x=42}).
+        \item Variable ist ein aktueller Parameter in einem Methodenaufruf, der den Wert ändert.
+        \item Variable ist ein formaler Parameter einer Methode (implizites \texttt{def} beim Methodenstart).
+        \item Variable ist eine Eingabe in ein Programm.
+    \end{itemize}
+    \item \textbf{use}: Eine Stelle, an der ein Variablenwert genutzt wird.
+    \begin{itemize}
+        \item Variable auf der rechten Seite einer Zuweisung.
+        \item Variable in einer Bedingungsprüfung.
+        \item Variable ist ein aktueller Parameter für eine Methode.
+        \item Variable ist eine Ausgabe des Programms.
+        \item Variable ist eine Ausgabe einer Methode in einer \texttt{return}-Anweisung.
+    \end{itemize}
+\end{itemize}
+
+$\rightarrow$ Ein DU-Paar (def-use-Paar) liegt nur dann vor, wenn das \texttt{def} nach dem \texttt{use} im gleichen Knoten (Basisblock) auftritt und der Knoten in einer Schleife liegt.
+
+\vspace{1em}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-14.png} 
+
+\raggedright
+
+\newpage
+
+\subsection{DU-Touren}
+
+\begin{itemize}
+    \item Nutze jedes def (All-Defs-Coverage: ADC)
+    \begin{itemize}
+        \item $\rightarrow$ Jedes \texttt{def} erreicht \textbf{ein} \texttt{use}
+    \end{itemize}
+    \item Gelange zu jedem use (All-Uses-Coverage: AUC)
+    \begin{itemize}
+        \item $\rightarrow$ Jedes \texttt{def} erreicht alle möglichen \texttt{use}
+    \end{itemize}
+    \item Verfolge alle DU-Pfade (All-DU-Paths-Coverage: ADUPC)
+\end{itemize}
+
+\vspace{1em}
+
+\centering \includegraphics[width=0.9\textwidth]{Graphen-15.png} 
+
+\raggedright
+
+\newpage
+
+
+\section{Vorgehensmodelle}
+
+
+
+\subsection{Wasserfall-Modell}
+
+\subsection{V-Modell}
+
+\subsection{Prototypen}
+
+\subsection{Iterative Modelle}
+
+\subsection{Inkrementelle Entwicklung}
+
+\subsection{Iterativ-Inkrementelle Entwicklung (Spiralmodell)}
+
+\subsection{Agile Methoden (Scrum)}
 
 \end{document}
