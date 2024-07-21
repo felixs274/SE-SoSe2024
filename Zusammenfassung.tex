@@ -1303,6 +1303,144 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 
 
 
+
+\raggedright \subsubsection{Analysemuster}
+
+\subsubsection*{Liste}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=0.5\textwidth]{Analysemuster-00.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Gruppierung gleichartiger Objekte
+        \item Teile der Attribute gelten für alle Objekte
+        \item Ein “Teil” ist genau einem “Ganzen” zugeordnet
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item Komposition (Teil kann ohne Ganzes nicht existieren)
+        \item Ganes hat mind. 1 Teil
+        \item “Teil” sind einem “Ganzen” fest zugeordnet
+    \end{itemize}
+\end{minipage}
+
+
+
+\subsubsection*{Exemplartyp}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=0.5\textwidth]{Analysemuster-01.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Ziel: Redundanzen vermeiden
+        \item Es gibt Eigenschaften, die für alle Exemplare gleich sind
+        \item Zusätzlich hat jedes Exemplar eigene Eigenschaften
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item Assoziation (keine Teile-Ganzes-Beziehung)
+        \item Beschreibung kann unabhängig existieren (Kardinalität *)
+    \end{itemize}
+\end{minipage}
+
+
+
+\subsubsection*{Baugruppe}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=1\textwidth]{Analysemuster-02.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Ganzes existiert nur mit seinen Einzelteilen (Auto + Teile)
+        \item Ohne seine Einzelteile ist Ganzes nicht nutzbar
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item Komposition
+        \item “Ganzes” kann ohne “Teile” nicht funktionieren
+        \item “Teil” kann von seiner Baugruppe getrennt werden
+    \end{itemize}
+\end{minipage}
+
+
+
+\subsubsection*{Stückliste}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=1\textwidth]{Analysemuster-03.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Rekursive Beziehung zw. Komponenten (Einheit als Struktur)
+        \item Komponente kann Komponenten enthalten (rekursive Struktur)
+        \item Enthaltene Teile sind einzeln behandelbar
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item Komposition
+        \item “Teil” können “Aggregat” zugeordnet werden
+        \item Kardinalität an Aggregat: 0..1
+    \end{itemize}
+\end{minipage}
+
+
+
+\subsubsection*{Koordinator}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=0.9\textwidth]{Analysemuster-04.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Mehrere Dinge stehen in Beziehung zueinander
+        \item Über die Beziehung werden Daten vorgehalten
+        \item Oft stehen Objekte über ein drittes Objekt in Beziehung
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item Einfache Assoziationen
+        \item Koordinator ersetzt n-äre Assoziation mit assoziativer Klasse
+        \item Koordinator besitzt wenige Attribute bzw. Operationen \\ \tiny $\rightarrow $ dafür mehrere Assoziationen zu anderen Klassen
+    \end{itemize}
+\end{minipage}
+
+
+
+\subsubsection*{Rollen}
+
+\begin{minipage}[h]{0.25\textwidth}
+    \centering \includegraphics[width=0.8\textwidth]{Analysemuster-05.png} 
+\end{minipage}
+\begin{minipage}[h]{0.7\textwidth}
+    \raggedleft
+    \begin{itemize}
+        \item Ein Objekt kann (zu einem Zeitpunkt) für andere Klasse verschiedene Rollen spielen
+        \item Unabhängig von der Beziehung - selben Attribute \& Operationen
+    \end{itemize}
+    \vspace{1em}
+    \begin{itemize}
+        \item mehrere einfache Assoziationen zwischen 2 Klassen
+        \item Ein Objekt kann in Bezug auf die Objekte der anderen Klasse verschiedene Rollen spielen
+        \item Objekt in verschiedenen Rollen benötigen die gleichen Operationen und Attribute
+    \end{itemize}
+\end{minipage}
+
+
+
+
+\vspace{10em}
+
+
+
+
 \raggedright \subsection{Objektdiagramme}
 
 \textbf{Ziel:} Momentaufnahme des Systemzustandes darstellen
@@ -1320,11 +1458,16 @@ $ \rightarrow $ \textbf{Welche Schritte} gehören zur Aufgabenerfüllung?
 
 
 
-\raggedright \subsection{Analysemuster}
-
-!!!TODO!!!
 
 \newpage
+
+
+
+
+
+
+
+
 
 
 \raggedright \subsection{Sequenzdiagramme}
